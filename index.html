@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MY MAP PROJECT</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+    <a href="#" class="option-icon header_item"><img src="img/a.svg"></a>
+        <div class="options-box">
+            <div>
+                <input data-bind="textInput: filter" type="text" placeholder="filter location">
+                <!-- <input id="hide-listings" type="button" value="Hide Listings"> -->
+            </div>
+            <div>
+                <ul data-bind="foreach: filterList">
+                    <li id="location-name"><span data-bind="text: title, click: showInfo"> </span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    <script src='js/jquery.min.js'></script>
+    <script>
+        $('.option-icon').click(function(){
+            $('.options-box').toggleClass('open');
+        });
+    </script>
+    <script src='js/knockout-3.4.0.js'></script>
+    <script src='js/main.js'></script>
+    <!--TODO: Load the JS API ASYNCHRONOUSLY below.-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD44fvNpUa4l2UN0iVPxmG-hJE38zN2oqU&v=3&callback=initMap" onerror="googleError()"></script>
+	<script>
+        $('#location-name').click(function(){
+            $('.options-box').removeClass('open');
+        });
+                  
+         $('a').click(function(){
+            $('a').removeClass('li-active');
+            $(this).addClass('li-active');
+        });
+        
+    </script>
+</body>
+
+
+</html>
