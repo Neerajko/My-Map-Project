@@ -1,0 +1,103 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+      position: absolute;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  float: right;
+  margin-right: 0;
+}
+
+.header_item{
+  display: inline-block;
+  margin-left: 10px;
+} 
+
+.option-icon{
+  display: none;
+  vertical-align: middle;
+}
+.option-icon img{
+  display: none;
+  width: 35px;
+  height: 18px;
+}
+
+#pano {
+    width: 300px;
+    height: 300px;
+}
+
+.text {
+    font-size: 10px;
+    left: 0px;
+}
+
+.options-box {
+    position: absolute;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: y auto;
+  background: #1c262f;
+  overflow-y: scroll;
+}
+ul{
+  margin-left: 2px;
+  padding-left: 7px;
+}
+li{
+  list-style-type: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  
+}
+a{
+  text-decoration: none;
+  color:#ffffff;
+}
+
+
+@media screen and (max-width:900px){
+    .main{
+    height: 90%;
+  }
+  #map{
+    width: 100%;
+    left:auto;
+    right: auto;
+  } 
+      .options-box {
+    margin-left: 0;
+    z-index: 10;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    background: #1c262f;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    
+  }
+  .options-box.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .option-icon {
+    vertical-align: middle;
+    display: inline-block;
+    }
+  .option-icon img{
+    display: inline-block;
+    }
+}
